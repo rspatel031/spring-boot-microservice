@@ -17,6 +17,7 @@
         <module>post-service</module>
         <module>discovery-service</module>
         <module>user-service</module>
+        <module>api-gateway</module>
     </modules>
 
     <properties>
@@ -25,6 +26,13 @@
         <spring-cloud.version>2022.0.3</spring-cloud.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>

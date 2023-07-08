@@ -2,6 +2,8 @@ package com.rahulpateldev.controllers;
 
 import com.rahulpateldev.entities.User;
 import com.rahulpateldev.services.UserService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,16 +29,26 @@ public class UserController {
 
     //    Fetch All User
     @GetMapping
-    public ResponseEntity<List<User>> getAllUsers() {
+    @CircuitBreaker(name = "usersPostsGetService", fallbackMethod = "handleGetAllUsers")
+    public ResponseEntity<?> getAllUsers() {
         List<User> users = this.userService.getAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
+    public ResponseEntity<?> handleGetAllUsers(RuntimeException ex) {
+        return new ResponseEntity<>("Unable to fetch users!!", HttpStatus.OK);
+    }
+
     //    Fetch 1 User
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUsers(@PathVariable String id) {
+    @CircuitBreaker(name = "usersPostsGetService", fallbackMethod = "handleUsersPostsGetService")
+    public ResponseEntity<?> getUsers(@PathVariable String id) {
         User user = this.userService.getUsers(id);
         return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+    public ResponseEntity<?> handleUsersPostsGetService(@PathVariable String id, RuntimeException ex) {
+        return new ResponseEntity<>("Unable to fetch users!!", HttpStatus.OK);
     }
 
     //    Delete User

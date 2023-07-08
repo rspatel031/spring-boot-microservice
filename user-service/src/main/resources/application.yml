@@ -27,3 +27,31 @@ eureka:
     register-with-eureka: true
     service-url:
       default-zone: http://localhost:8761/eureka
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    circuitbreakers:
+      enabled: true
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        register-health-indicator: true
+    instances:
+      usersPostsGetService:
+        failure-rate-threshold: 50
+        slow-call-rate-threshold: 100
+        permitted-number-of-calls-in-half-open-state: 5
+        max-wait-duration-in-half-open-state: 10s
+        minimum-number-of-calls: 2
+        wait-duration-in-open-state: 5s
+        automatic-transition-from-open-to-half-open-enabled: true
+        sliding-window-size: 5
+        sliding-window-type: count_based
+        register-health-indicator: true

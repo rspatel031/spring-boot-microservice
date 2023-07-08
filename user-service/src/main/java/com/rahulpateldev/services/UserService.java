@@ -6,13 +6,12 @@ import com.rahulpateldev.exceptions.custom.IDNotFoundException;
 import com.rahulpateldev.external.service.PostService;
 import com.rahulpateldev.repositories.UserRepository;
 import jakarta.transaction.Transactional;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
-@Slf4j
 @Service
 @Transactional
 public class UserService {
@@ -42,7 +41,14 @@ public class UserService {
     }
 
     public List<User> getAllUsers() {
-        return this.userRepository.findAll();
+        List<User> users = this.userRepository.findAll();
+       return users
+                .stream()
+                .peek(user -> {
+                    List<Post> posts = this.postService.getPostsByUserId(user.getId());
+                    user.setPosts(posts);
+                })
+               .collect(Collectors.toList());
     }
 
     public void deleteUser(String id) {

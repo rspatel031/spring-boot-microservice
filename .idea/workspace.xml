@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39744c34-4eda-4ee6-82b2-ae457a540127" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/rahulpateldev/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rahulpateldev/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/rahulpateldev/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rahulpateldev/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +36,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2S7Dc00iDICSQWgrpVbKJnG0a0i" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -57,7 +67,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.build.tools.auto.reload": "ALL",
-    "settings.editor.selected.configurable": "reactor",
+    "settings.editor.selected.configurable": "spring.boot",
     "spring.configuration.checksum": "a8b90bf5e550b538b82758b970750341",
     "vue.rearranger.settings.migration": "true"
   }
@@ -81,11 +91,20 @@
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
+        <option value="Application" />
         <option value="Java Scratch" />
+        <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.UserServiceApp">
+    <configuration name="ApiGatewayApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="api-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rahulpateldev.ApiGatewayApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DiscoveryServiceApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="discovery-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rahulpateldev.DiscoveryServiceApp" />
@@ -99,14 +118,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostServiceApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="PostServiceApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" nameIsGenerated="true">
       <module name="post-service" />
+      <selectedOptions>
+        <option name="spring.boot.profiles" visible="false" />
+      </selectedOptions>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rahulpateldev.PostServiceApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" temporary="true" nameIsGenerated="true">
       <module name="user-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rahulpateldev.UserServiceApp" />
       <extension name="coverage">
@@ -119,6 +141,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="springBootConfigurationType" factoryName="Spring Boot">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.ApiGatewayApp" />
+      <item itemvalue="Spring Boot.PostServiceApp" />
+      <item itemvalue="Spring Boot.DiscoveryServiceApp" />
+      <item itemvalue="Spring Boot.UserServiceApp" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.UserServiceApp" />
@@ -135,7 +168,7 @@
       <option name="presentableId" value="Default" />
       <updated>1688488803477</updated>
       <workItem from="1688488805121" duration="3126000" />
-      <workItem from="1688575263219" duration="15269000" />
+      <workItem from="1688575263219" duration="24799000" />
     </task>
     <servers />
   </component>
